@@ -1,0 +1,692 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Roboto');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #070707;
+    color: green;
+    text-shadow: 0px 4px 1px #000000;
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+}
+
+/* Navigation bar */
+.horizontal-nav-bar {
+    background-color: rgba(46, 47, 47, 0.8);
+
+    height: 60px;
+    line-height: 60px;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    z-index: 2;
+}
+
+.horizontal-nav-bar ul {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.horizontal-nav-bar li {
+    float: left;
+}
+
+.horizontal-nav-bar li a {
+    display: block;
+    color: #ffffff;
+    padding: 0 15px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.horizontal-nav-bar li:not(.logo) a:hover {
+    background-color: rgba(46, 47, 47, .5);
+    transition-duration: 0.5s;
+    text-decoration: underline;
+}
+
+.horizontal-nav-bar li:not(.logo) a.active {
+    text-decoration: underline;
+}
+
+.horizontal-nav-bar .nav-left {
+    float: left;
+    margin-left: 20px;
+}
+
+.horizontal-nav-bar .nav-right {
+    float: right;
+    margin-right: 20px;
+}
+
+/* Dropdown menu */
+.horizontal-nav-bar .dropdown {
+    display: inline-block;
+}
+
+.horizontal-nav-bar .dropdown .dropdown-content {
+    display: none;
+    background-color: rgba(46, 47, 47, .8);
+
+    line-height: 20px;
+
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.horizontal-nav-bar .dropdown .dropdown-content a {
+    display: block;
+    z-index: 3;
+    padding: 5px 15px;
+
+    font-size: 14px;
+    text-align: left;
+}
+
+.horizontal-nav-bar .dropdown .dropdown-content a.dropdown-homepage {
+    display: none;
+}
+
+.horizontal-nav-bar .dropdown .dropdown-content a:hover {
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: underline;
+}
+
+.horizontal-nav-bar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.horizontal-nav-bar .dropdown:hover .dropdown-button {
+    background-color: rgba(46, 47, 47, .5);
+}
+
+/* underlaying menu */
+.horizontal-nav-bar .search-box-box {
+  display: inline-block;
+  color: ghostwhite;
+  position: fixed;
+  top: 65px;
+  left: 0px;
+  padding-left: 10px;
+  font-size: 14px;
+  line-height: normal;
+}
+
+.horizontal-nav-bar .search-box-box input[type="submit"] {
+  font-size: 12px;
+}
+
+.horizontal-nav-bar .user-info-box-content {
+  display: inline-block;
+  color: ghostwhite;
+  position: fixed;
+  top: 65px;
+  right: 0px;
+  padding-right: 30px;
+  font-size: 12px;
+  line-height: normal;
+}
+
+
+/* Main layout */
+main {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    background-color: #070707;
+    padding: 0 40px;
+    color: #F5AD28;
+
+    min-height: calc(100vh - 26px);
+}
+
+main.home-backgroundimage {
+    background-image: url(../images/backgroundhome_1920x1080.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+main strong {
+    color: #F5AD28;
+}
+
+main h3 {
+    margin-bottom: 10px;
+}
+
+main .welcome-container {
+    padding-top: calc(20vh - 26px);
+    height: auto;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+}
+
+main .welcome-container .title-box h2 {
+    font-size: 56px;
+}
+
+main .welcome-container .catchy-info-box {
+    margin-top: 10%;
+    color: ghostwhite;
+}
+
+/* Highlight image */
+main .highlight-wrapper img {
+    margin-left: -40px;
+
+    width: calc(100% + 80px);
+    max-height: 1080px;
+}
+
+/* Item slider layout */
+main .slider-container {
+    padding-top: 75px;
+}
+
+main .slider-container:last-child {
+    padding-bottom: 50px;
+}
+
+main .slider-items {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+main .slider-items a {
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+}
+
+main .slider-items img {
+    width: 300px;
+    height: 170px;
+}
+
+main .slider-items .info-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(46, 47, 47, 0.8);
+    width: 300px;
+    height: 170px;
+    margin-top: -175px;
+    z-index: 1;
+    white-space: pre-wrap;
+
+    padding: 10px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+main .slider-items a:hover .info-content {
+    display: block;
+}
+
+/* Scrollbar layout */
+.scrollbar-style::-webkit-scrollbar-track {
+    background-color: inherit;
+}
+
+.scrollbar-style::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+    background-color: inherit;
+}
+
+.scrollbar-style::-webkit-scrollbar-thumb {
+    background-color: #EB8921;
+}
+
+/* Movie information page */
+main .information-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 100%;
+    padding: 100px 100px 0 100px;
+    margin: 0;
+    font-size: 18px;
+    word-wrap: break-word;
+}
+
+/* Movie image */
+main .information-container .movie-block {
+  width: 70%;
+  max-height: 520px;
+}
+
+main .information-container .movie-block .movie-image {
+  width:100%;
+  height:100%;
+  max-height:700px;
+  min-height: 500px;
+  background-size:cover;
+  background-position:center;
+}
+
+/* Movie information */
+main .information-container .movie-information {
+    width: 30%;
+    max-height: 420px;
+    overflow: hidden;
+    padding-top: 25px;
+    margin-top: 60px;
+    margin-left: 100px;
+    color: ghostwhite;
+}
+
+main .information-container .movie-information p {
+    width: 100%;
+}
+
+main .information-container p.movie-information-cast {
+    max-height: 50px;
+    overflow-y: scroll;
+}
+
+main .information-container p.movie-information-text {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+main .relatable {
+    margin: 0 100px;
+}
+
+/* Subscription page */
+main .information-container .subscription-info {
+    background-color: #252525;
+    box-shadow: 7px 7px 5px #151515;
+    padding: 0 10px;
+    margin: 0 5px 15px 5px;
+    height: 450px;
+    max-width: 33%;
+    text-align: center;
+}
+
+main .information-container .subscription-info h3 {
+    padding-top: 10px;
+    text-transform: uppercase;
+    font-size: 32px;
+}
+
+main .information-container .subscription-info .price {
+    padding-top: 0;
+    padding-bottom: 15px;
+    color: ghostwhite;
+    font-size: 30px;
+}
+
+.price {
+    margin-bottom: 10px;
+    border-bottom: 1px solid ghostwhite;
+}
+
+main .information-container .subscription-info p {
+    padding-top: 5px;
+    color: lightgray;
+    font-size: 24px;
+}
+
+/* Subscription form */
+main .subscription-form {
+    margin: 20px 0 20px 50%;
+    transform: translateX(-50%);
+    max-width: 550px;
+
+    padding: 0 15px;
+    background-color: #252525;
+    box-shadow: 7px 7px 5px #151515;
+}
+
+main .subscription-form h4 {
+    margin-top: -15px;
+    font-size: 25px;
+}
+
+.subscription-form input[type=text], .subscription-form input[type=password], .subscription-form input[type=date], .subscription-form input[type=email] {
+    border: 2px solid #F5AD28;
+    padding: 2px;
+}
+
+.subscription-form input[type=text]:focus, .subscription-form input[type=password]:focus, .subscription-form input[type=date]:focus, .subscription-form input[type=email]:focus {
+    border: 3px solid #F5AD28;
+    outline: none;
+}
+
+.subscription-form select {
+    border: 2px solid #F5AD28;
+    padding: 2px;
+}
+
+.subscription-form select:focus {
+    outline: none;
+}
+
+.subscription-form input[type=submit], .login-container input[type=submit] {
+    background-color: #F5AD28;
+    border: none;
+    color: #262727;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+
+    margin-bottom: 20px;
+}
+
+.subscription-form input[type=submit]:hover, .login-container input[type=submit]:hover {
+    background-color: #EB8921;
+    transition-duration: 0.8s;
+}
+
+/* Submit completed screen */
+main .submit-text {
+    text-align: center;
+    padding-top: 25%;
+}
+
+main .submit-text a {
+    color: #F5AD28;
+    text-decoration: none;
+}
+
+main .submit-text a:hover {
+    color: #EB8921;
+}
+
+/* Login */
+.login-container {
+    margin: 200px auto 0 auto;
+    padding: 10px;
+    width: 60%;
+
+    background-color: rgb(30, 30, 30);
+    border-radius: 11px;
+
+    text-align: center;
+    color: #F5AD28;
+}
+
+.login-container h2 {
+    font-size: 40px;
+}
+
+.login-container h4 {
+    font-size: 20px;
+}
+
+.login-container form {
+    margin: 10px;
+}
+
+.login-container input[type=submit] {
+    margin: 5px;
+    padding: 5px;
+}
+
+.login-container input[type=text], .login-container input[type=password] {
+    padding: 3px;
+    margin: 3px;
+    font-size: 15px;
+}
+
+.login-container input[type=text], .login-container input[type=password], .login-container input[type=submit] {
+    width: 300px;
+}
+
+/* Submit completed screen */
+main .submit-text {
+    color: ghostwhite;
+    font-size: 32px;
+    text-align: center;
+    padding-top: 25%;
+}
+
+main .submit-text a {
+    font-size: 14px;
+    color: #F5AD28;
+    text-decoration: none;
+}
+
+main .submit-text a:hover {
+    color: #EB8921;
+}
+
+/* Search result */
+main.search_result_container {
+  padding-top: 100px;
+}
+
+.search_result_box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: stretch;
+}
+
+.search_result_box_result {
+  position: relative;
+  max-width: 33%;
+  height: 100%;
+}
+
+.search_result_box_result img {
+  width: 100%;
+}
+
+.search_result_box_result .search_result_box_info {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  background-color: rgba(46, 47, 47, 0.8);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.search_result_box_result:hover .search_result_box_info {
+  height: calc(100% - 5px);
+}
+
+.search_result_box_result .search_result_box_info .text{
+  white-space: nowrap;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Terms and privacy */
+main .terms-container {
+    max-width: 90%;
+    padding-left: 5%;
+    padding-top: 80px;
+    color: ghostwhite;
+    font-size: 16px;
+}
+
+main .terms-container ul {
+    text-decoration: none;
+    list-style-type: square;
+}
+
+main .terms-container p, .terms-container ul {
+    padding-bottom: 20px;
+}
+
+main .terms-container ul li {
+    margin-left: 40px;
+}
+
+/* About */
+.personal-info {
+    max-height: 800px;
+    max-width: 400px;
+    height: 100%;
+
+    margin: 25px 30px 15px 30px;
+    padding: 20px 0;
+
+    text-align: center;
+    background-color: #252525;
+    box-shadow: 7px 7px 5px #151515;
+}
+
+.personal-info img {
+    margin: 20px 10px;
+    max-width: calc(100% - 20px);
+}
+
+.personal-info p {
+    color: ghostwhite;
+    padding: 0 10px 10px 10px;
+}
+
+/* Footer layout */
+footer {
+    background-color: #262727;
+    font-size: 12px;
+    text-align: center;
+    bottom: 0px;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+footer li {
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+footer li:first-child {
+    border-right: 1px solid #fff;
+}
+
+footer li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer li a:hover {
+    text-decoration: underline;
+}
+
+/* Media querries */
+@media screen and (max-width: 950px) {
+    .horizontal-nav-bar .logo {
+        display: none;
+      }
+
+    .horizontal-nav-bar .dropdown .dropdown-content a.dropdown-homepage {
+        display: block;
+    }
+
+    main .information-container {
+        flex-direction: column;
+        margin: 0;
+        padding: 100px 0 0 0;
+    }
+
+    main .information-container .movie-information {
+      width: 100%;
+      margin: 0;
+    }
+
+    main .information-container .movie-block {
+      width: 100%;
+      max-height: 320px;
+      margin: 0;
+    }
+
+    main .information-container .movie-block .movie-image {
+      min-height: 300px;
+    }
+
+    main .information-container .subscription-info {
+      max-width: 100%;
+    }
+
+    main .subscription-form {
+      margin: 30px 5px;
+      max-width: 550px;
+      transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 620px) {
+    body {
+        font-size: 14px;
+    }
+
+    body main {
+      padding: 0 20px;
+    }
+
+    body main .relatable {
+        margin: 0 10px;
+    }
+
+    .horizontal-nav-bar {
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .horizontal-nav-bar .nav-left {
+        margin-left: 10px;
+    }
+
+    .horizontal-nav-bar .nav-right {
+        margin-right: 10px;
+    }
+
+    .horizontal-nav-bar .search-box-box {
+      top: 80px;
+    }
+
+    .login-container input[type=text], .login-container input[type=password], .login-container input[type=submit] {
+      width: 75%;
+    }
+
+    .highlight-wrapper {
+        padding-top: 50px;
+    }
+
+    main .slider-container {
+        padding-bottom: 30px;
+    }
+
+    .slider-item img {
+        width: 150px;
+    }
+
+    .movie-information-container {
+        margin: 0 0;
+    }
+
+    .relatable {
+        margin: 0 0;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    body {
+        font-size: 12px;
+    }
+}
